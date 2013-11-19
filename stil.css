@@ -1,0 +1,41 @@
+body {
+	background-color: rgb(212,230,178);
+	text-align: center;
+
+}
+
+.main-table {
+	border: 2.5px solid #333333;
+}
+
+.main-table thead {
+	background-color: rgb(100,20,200);
+	font-family: "Times New Roman",Georgia,Serif;
+	font-style: oblique;
+	font-weight: bolder;
+	font-size: 1.2em;
+	color: red;
+
+}
+
+.main-table thead tr td {
+	padding: 5px;
+}
+
+.main-table tbody tr td {
+	text-align: center;
+	text-decoration: underline;
+	font-size:1.0em;
+	font-style: italic;
+}
+
+.id {
+
+	background-color: rgb(100,20,200) !important; 
+	color: red;
+	font-size: 1.2em !important;
+	font-family: "Times New Roman",Georgia,Serif !important;
+	font-style: oblique !important;
+	font-weight: bolder !important;
+
+}
