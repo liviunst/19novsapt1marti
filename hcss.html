@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Titlu</title>
+
+		<link rel="stylesheet" href="stil.css" />
+		<style>
+			body{
+				background-color: red;
+			}
+
+			.main-table {
+				border: 2.5px solid #333333;
+			}
+
+			.main-table thead {
+				background-color: orange;
+				font-weight: bold;
+				font-size: 1.2em;
+			}
+
+			.main-table thead tr td {
+				padding: 5px;
+			}
+
+			.main-table tbody tr td {
+				text-align: center;
+			}
+
+			#formular-submit {
+				border: 1px solid;
+				padding: 5px 25px;
+				cursor: progress;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Heading 1</h1>
+		<h2>Heading 2</h2>
+
+		<hr>
+
+		<p>Paragraf</p>
+
+		<hr>
+
+		<p class="neat">Urmeaza o lista de link-uri:</p>
+		<ul>
+			<li><a style="font-weight: bold; text-decoration: none; color: orange;" href="http://www.google.com">Google</a></li>
+			<li><a href="http://www.bing.com">Bing</a></li>
+		</ul>
+
+		<hr>
+
+		<table class="main-table">
+			<thead>
+				<tr>
+					<td>Coloana 1</td>
+					<td>Coloana 2</td>
+					<td>Coloana 3</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1 - 1</td>
+					<td>1 - 2</td>
+					<td>1 - 3</td>
+				</tr>
+				<tr>
+					<td>2 - 1</td>
+					<td>2 - 2</td>
+					<td>2 - 3</td>
+				</tr>
+				<tr>
+					<td>3 - 1</td>
+					<td>3 - 2</td>
+					<td>3 - 3</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+
+		<form id="formular">
+			<input id="formular-text" type="text" /> <br>
+			<button id="formular-submit">Buton</button>
+		</form>
+	</body>
+</html>

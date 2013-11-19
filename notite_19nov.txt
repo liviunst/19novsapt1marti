@@ -1,0 +1,11 @@
+padding - interior
+margine - exterior 
+
+!important - "suprascrie"
+
+css
+	body
+	.class
+	#id
+
+javascript

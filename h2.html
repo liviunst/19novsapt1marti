@@ -3,6 +3,39 @@
 	<head>
 		<title>Titlu</title>
 		<link rel="stylesheet" href="stil.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			/* $(function() {}); ia locul body.onload pentru o separare mai buna */
+
+			$(function() {
+				var nr = 4;
+
+				$('#formular').submit(function(e) {
+					e.preventDefault();
+
+					var nume = $('#nume').val();
+					var prenume = $('#prenume').val();
+					var data = $('#data').val();
+					var fac = $('#facultate').val();
+
+					$('#tabel tr:last').after('<tr><td class = "id">' + nr + '</td><td>' + nume +'</td><td>' + prenume +'</td><td>' + data +'</td><td>' + fac +'</td></tr>');
+					nr++;
+					$('#nr').html('<h1>' + nr + '</h1>');
+					
+					$('#tabel tbody td').click(function(e){
+						if( !$(this).hasClass('id')){
+							$(this).css('visibility','hidden');	
+						}
+					})
+				});
+
+				$('#tabel tbody td').click(function(e){
+					if( !$(this).hasClass('id')){
+						$(this).css('visibility','hidden');	
+					}				
+				})
+			});
+		</script>
 	</head>
 	<body>
 		<h1>Tabel ex 1</h1>
@@ -10,7 +43,7 @@
 
 		<hr>
 
-		<table class="main-table">
+		<table id="tabel" class="main-table">
 			<thead>
 				<tr>
 					<td>Id</td>
@@ -44,6 +77,15 @@
 				</tr>
 			</tbody>
 		</table>
+		<h1 id = "nr"> 3 </h1>
+		<br>
+		<form id="formular">
+			<input id="nume" type="text" placeholder="Nume" /> <br>
+			<input id="prenume" type="text" placeholder="Prenume" /><br>
+			<input id="data" type="text" placeholder="Data nasterii" /><br>
+			<input id="facultate" type="text" placeholder="Facultate" /><br>
+			<input id="submit-formular" type="submit" />
+		</form>
 
 		<hr>
 

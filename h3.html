@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#spatiu-de-text {
+				padding: 25px;
+				border: 5px solid #333;
+			}
+		</style>
+
+		<script>
+			/* Putem defini obiecte */
+			var eu = {
+				nume: "Cosmin",
+				varsta: 24,
+				afiseaza_student: function() {
+					alert(this.nume + ", " + this.varsta);
+				},
+				printeaza_student: function() {
+					// Putem accesa elemente din pagina
+					var spatiu_de_print = document.getElementById("spatiu-de-text");
+					spatiu_de_print.innerHTML += this.nume + ", " + this.varsta + "<br><br>";
+				}
+			};
+
+			/* Putem defini functii */
+			function calculeaza_a_plus_b(a, b) {
+				return a + b;
+			}
+
+			function printeaza_sir_de_caractere(sir) {
+				var spatiu_de_print = document.getElementById("spatiu-de-text");
+				spatiu_de_print.innerHTML += sir + "<br>";
+			}
+
+			function incarcat() {
+				/* Putem declara variabile fara a le asigna */
+				var nume;
+
+				/* Le putem declara si sa le definim */
+				var varsta = 24;
+
+				/* Sau le putem defini mai tarziu */
+				nume = "Cosmin";
+
+				/* Putem face operatiuni matematice. Cati ani voi avea in 5 ani? */
+				var varsta_peste_5_ani = varsta + 5; // Pot comenta si aici
+
+				// Avem operatiuni logice >, <, >=, <= etc. si conditii if, else, else if etc.
+				if(varsta_peste_5_ani >= 29) {
+					// Fa ceva
+				} else if(varsta_peste_5_ani >= 25 && varsta_peste_5_ani < 29) {
+					// Fa altceva
+				} else {
+					// Fa altceva
+				}
+
+				if(varsta === '24') {
+					// Nu sunt egale deoarece '24' reprezinta un string
+				} else {
+					// Diferita !==
+				}
+
+				// BUCLE!
+				var i;
+				for(i = 0; i < 100; i++) {
+					// Fa ceva de 100 de ori
+					// incrementand i la fiecare
+					// ceva.
+				}
+
+				while(varsta < 100) {
+					varsta++; // Incrementam varsta pana ajungem la 100
+				}
+
+				/* Putem apela functiile declarate de noi */
+				varsta_peste_5_ani = calculeaza_a_plus_b(varsta, 5);
+
+				eu.afiseaza_student();
+				eu.printeaza_student();
+
+				// Ce palpitant, putem face liste de obiecte (ARRAY)
+				var prima_lista = ['Ana', 'are', 'mere'];
+				for(i = 0; i < prima_lista.length; i++) {
+					printeaza_sir_de_caractere(prima_lista[i]);
+				}
+
+				var lista_de_studenti = []; // O lista goala
+
+				/* Declaram niste studenti */
+				var student_unu = {
+					nume: 'X',
+					varsta: 19
+				}
+				var student_doi = {
+					nume: 'Y',
+					varsta: 20
+				}
+				var student_trei = {
+					nume: 'Z',
+					varsta: 21
+				}
+
+				/* Printam un sir de caractere gol, la care se concateneaza <br> deci avem o linie noua */
+				printeaza_sir_de_caractere('');
+
+				/* Push adauga obiecte in lista */
+				lista_de_studenti.push(student_unu);
+				lista_de_studenti.push(student_doi);
+				lista_de_studenti.push(student_trei);
+
+				for(i = 0; i < lista_de_studenti.length; i++) {
+					printeaza_sir_de_caractere(lista_de_studenti[i].nume + ' - ' + lista_de_studenti[i].varsta);
+				}
+
+				printeaza_sir_de_caractere('');
+
+				// pop scoate ultima intrare din lista
+				var student_scos = lista_de_studenti.pop();
+
+				printeaza_sir_de_caractere(student_scos.nume + ' - ' + student_scos.varsta);
+
+				printeaza_sir_de_caractere('');
+
+				/* Putem lua si user-input... */
+				var ce_a_zis_utilizatorul = prompt("Ce zici utilizatorule?");
+				printeaza_sir_de_caractere(ce_a_zis_utilizatorul);
+			}
+		</script>
+	</head>
+
+	<body onload="incarcat();">
+		<div id="spatiu-de-text"></div>
+	</body>
+</html>
