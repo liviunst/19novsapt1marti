@@ -10,7 +10,7 @@
 			$(function() {
 				var nr = 3;
 
-				var func = function(e){
+				var eliminare_linie = function(e){
 					if( !$(this).hasClass('id')){
 						$(this).css('visibility','hidden');	
 						var non_empty_cells = 0;
@@ -37,14 +37,15 @@
 					var fac = $('#facultate').val();
 					
 					nr++;
+
 					$('#tabel tr:last').after('<tr><td class = "id">' + nr + '</td><td>' + nume +'</td><td>' + prenume +'</td><td>' + data +'</td><td>' + fac +'</td></tr>');
 					
-					$('#nr').html('<h2 id = "nr"> Studenti :' + nr + '</h2>');
+					$('#nr').html('Studenti :' + nr );
 					
-					$('#tabel tr:last td').click(func);
+					$('#tabel tr:last td').click(eliminare_linie);
 				});
 
-				$('#tabel tbody td').click(func);
+				$('#tabel tbody td').click(eliminare_linie);
 			});
 		</script>
 	</head>
