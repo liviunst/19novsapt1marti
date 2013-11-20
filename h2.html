@@ -23,7 +23,7 @@
 						if(non_empty_cells === 1){
 							$(this).parent().remove();						
 							nr --;
-							$('#nr').html('<h1>' + nr + '</h1>');
+							$('#nr').html('<h2 id = "nr"> Studenti :' + nr + '</h2>');
 						}
 					}				
 				}
@@ -39,9 +39,9 @@
 					nr++;
 					$('#tabel tr:last').after('<tr><td class = "id">' + nr + '</td><td>' + nume +'</td><td>' + prenume +'</td><td>' + data +'</td><td>' + fac +'</td></tr>');
 					
-					$('#nr').html('<h1>' + nr + '</h1>');
+					$('#nr').html('<h2 id = "nr"> Studenti :' + nr + '</h2>');
 					
-					$('#tabel tbody td').click(func);
+					$('#tabel tr:last td').click(func);
 				});
 
 				$('#tabel tbody td').click(func);
@@ -50,7 +50,7 @@
 	</head>
 	<body>
 		<h1>Tabel ex 1</h1>
-		<h2>Studenti</h2>
+		<h2 id = "nr">Studenti : 3</h2>
 
 		<hr>
 
@@ -88,7 +88,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<h1 id = "nr"> 3 </h1>
 		<br>
 		<form id="formular">
 			<input id="nume" type="text" placeholder="Nume" /> <br>
