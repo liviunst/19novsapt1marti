@@ -8,7 +8,25 @@
 			/* $(function() {}); ia locul body.onload pentru o separare mai buna */
 
 			$(function() {
-				var nr = 4;
+				var nr = 3;
+
+				var func = function(e){
+					if( !$(this).hasClass('id')){
+						$(this).css('visibility','hidden');	
+						var non_empty_cells = 0;
+						$(this).siblings().each(function(e){
+							if($(this).css('visibility') !== 'hidden'){
+								non_empty_cells++;
+							}
+						});
+						//alert(non_empty_cells);
+						if(non_empty_cells === 1){
+							$(this).parent().remove();						
+							nr --;
+							$('#nr').html('<h1>' + nr + '</h1>');
+						}
+					}				
+				}
 
 				$('#formular').submit(function(e) {
 					e.preventDefault();
@@ -17,23 +35,16 @@
 					var prenume = $('#prenume').val();
 					var data = $('#data').val();
 					var fac = $('#facultate').val();
-
-					$('#tabel tr:last').after('<tr><td class = "id">' + nr + '</td><td>' + nume +'</td><td>' + prenume +'</td><td>' + data +'</td><td>' + fac +'</td></tr>');
+					
 					nr++;
+					$('#tabel tr:last').after('<tr><td class = "id">' + nr + '</td><td>' + nume +'</td><td>' + prenume +'</td><td>' + data +'</td><td>' + fac +'</td></tr>');
+					
 					$('#nr').html('<h1>' + nr + '</h1>');
 					
-					$('#tabel tbody td').click(function(e){
-						if( !$(this).hasClass('id')){
-							$(this).css('visibility','hidden');	
-						}
-					})
+					$('#tabel tbody td').click(func);
 				});
 
-				$('#tabel tbody td').click(function(e){
-					if( !$(this).hasClass('id')){
-						$(this).css('visibility','hidden');	
-					}				
-				})
+				$('#tabel tbody td').click(func);
 			});
 		</script>
 	</head>
